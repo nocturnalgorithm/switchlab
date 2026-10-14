@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: switchlab
+    runtime: static
+    buildCommand: npx --yes pnpm@11.25.0 install --frozen-lockfile && npm run check && npm test && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+

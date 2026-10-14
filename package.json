@@ -1,0 +1,29 @@
+{
+  "name": "switchlab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node src/solver.test.ts && node src/cursorDrag.test.ts",
+    "dev": "node serve.mjs",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "plotly.js-basic-dist-min": "^3.1.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0",
+    "tsx": "^4.20.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
